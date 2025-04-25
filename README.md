@@ -1,4 +1,4 @@
-# Schemaless API Server
+# FlexStore
 
 A RESTful API server in Go with SQLite for schemaless data storage.
 
@@ -8,6 +8,7 @@ A RESTful API server in Go with SQLite for schemaless data storage.
 - Full CRUD operations
 - Bulk insert via JSON files or POST requests
 - SQLite database backend
+- HTTP Basic Authentication for protected endpoints
 
 ## Getting Started
 
@@ -45,6 +46,9 @@ Available command line options:
 - `-help`: Show help information
 - `-version`: Show version information
 - `-addr`: Set HTTP service address (default: ":8080")
+- `-auth`: Enable HTTP Basic Authentication for protected endpoints
+- `-username`: Set username for authentication (default: "admin")
+- `-password`: Set password for authentication (default: "password")
 
 ### API Endpoints
 
