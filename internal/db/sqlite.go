@@ -21,9 +21,9 @@ type Config struct {
 }
 
 // NewConfig creates a default database configuration
-func NewConfig() *Config {
+func NewConfig(sqlitePath string) *Config {
 	return &Config{
-		Path: "./data/schemaless.db",
+		Path: sqlitePath,
 	}
 }
 

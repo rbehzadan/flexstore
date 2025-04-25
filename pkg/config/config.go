@@ -6,17 +6,19 @@ import (
 
 // Config holds application configuration
 type Config struct {
-	Version   string
-	StartTime time.Time
-	Addr      string
+	Version    string
+	StartTime  time.Time
+	Addr       string
+	SqlitePath string
 }
 
 // NewConfig creates a new Config with default values
 func NewConfig() *Config {
 	return &Config{
-		Version:   "0.0.0",
-		StartTime: time.Now(),
-		Addr:      ":8080",
+		Version:    "0.0.0",
+		StartTime:  time.Now(),
+		Addr:       ":8080",
+		SqlitePath: "data/db.sqlite",
 	}
 }
 
