@@ -391,6 +391,47 @@ def test_collection_deletion():
     
     return delete_success and verification_success
 
+def test_protected_endpoint():
+    """Test the protected endpoint with authentication."""
+    print_header("Testing Protected Endpoint")
+    
+    # Test with valid credentials
+    auth = ('admin', 'password')
+    response = requests.get(f"{BASE_URL}/api/protected/info", auth=auth)
+    auth_success = response.status_code == 200
+    
+    # Check response data
+    response_valid = False
+    if auth_success:
+        try:
+            data = response.json().get('data', {})
+            has_message = 'message' in data
+            has_server_time = 'server_time' in data
+            has_version = 'version' in data
+            has_uptime = 'uptime' in data
+            response_valid = has_message and has_server_time and has_version and has_uptime
+        except:
+            response_valid = False
+    
+    print_test("Access protected endpoint with valid credentials", auth_success, response)
+    print_test("Protected endpoint returns valid data", response_valid, 
+               details="Response data is missing expected fields" if not response_valid else None)
+    
+    # Test with invalid credentials
+    bad_auth = ('wrong', 'credentials')
+    response = requests.get(f"{BASE_URL}/api/protected/info", auth=bad_auth)
+    auth_failure = response.status_code == 401
+    
+    print_test("Access protected endpoint with invalid credentials fails", auth_failure, response)
+    
+    # Test with no credentials
+    response = requests.get(f"{BASE_URL}/api/protected/info")
+    no_auth_failure = response.status_code == 401
+    
+    print_test("Access protected endpoint with no credentials fails", no_auth_failure, response)
+    
+    return auth_success and response_valid and auth_failure and no_auth_failure
+
 def run_all_tests():
     """Run all tests and report results."""
     print(colored(f"\nTESTING SCHEMALESS API SERVER AT {BASE_URL}", "white", "on_blue"))
@@ -406,6 +447,7 @@ def run_all_tests():
         ("File Upload", test_file_upload),
         ("Document Deletion", test_document_deletion),
         ("Collection Deletion", test_collection_deletion),
+        ("Protected Endpoint", test_protected_endpoint),
     ]
     
     results = {}

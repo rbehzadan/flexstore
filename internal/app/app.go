@@ -62,6 +62,7 @@ func (a *App) setupRoutes() {
 	healthHandler := handlers.HealthHandler(a.Config)
 	collectionHandlers := handlers.NewCollectionHandlers(a.CollectionService)
 	documentHandlers := handlers.NewDocumentHandlers(a.DocumentService)
+	protectedHandler := handlers.ProtectedHandler(a.Config)
 
 	// Register health endpoint
 	a.Router.HandleFunc("/health", healthHandler).Methods("GET")
@@ -82,6 +83,19 @@ func (a *App) setupRoutes() {
 	// Bulk operations
 	a.Router.HandleFunc("/api/collections/{name}/bulk", documentHandlers.BulkCreateDocuments()).Methods("POST")
 	a.Router.HandleFunc("/api/upload/{name}", documentHandlers.UploadJSONFile()).Methods("POST")
+
+	// Create a subrouter for protected routes
+	protectedRouter := a.Router.PathPrefix("/api/protected").Subrouter()
+
+	// Apply authentication middleware if enabled
+	if a.Config.EnableBasicAuth {
+		authMiddleware := middleware.BasicAuthMiddleware(a.Config.AuthUsername, a.Config.AuthPassword)
+		protectedRouter.Use(authMiddleware)
+	}
+
+	// Add protected routes
+	protectedRouter.HandleFunc("/info", protectedHandler).Methods("GET")
+
 }
 
 // SetupRouter configures and returns the router with all routes and middleware for testing

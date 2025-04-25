@@ -21,6 +21,9 @@ func main() {
 		showVersion = flag.Bool("version", false, "Show version information")
 		showHelp    = flag.Bool("help", false, "Show help information")
 		addr        = flag.String("addr", ":8080", "HTTP service address")
+		enableAuth  = flag.Bool("auth", true, "Enable HTTP Basic Authentication")
+		username    = flag.String("username", "admin", "Username for HTTP Basic Authentication")
+		password    = flag.String("password", "password", "Password for HTTP Basic Authentication")
 	)
 
 	flag.Parse()
@@ -49,6 +52,9 @@ func main() {
 	cfg.Version = version
 	cfg.StartTime = time.Now()
 	cfg.Addr = *addr
+	cfg.EnableBasicAuth = *enableAuth
+	cfg.AuthUsername = *username
+	cfg.AuthPassword = *password
 
 	// Start the server with the initialized config
 	server.Run(cfg)
