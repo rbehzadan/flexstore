@@ -1,6 +1,6 @@
-# Schemaless API Test Script
+# FlexStore API Test Script
 
-This Python script thoroughly tests all endpoints of the Schemaless API Server.
+This Python script thoroughly tests all endpoints of the FlexStore API Server.
 
 ## Features
 
@@ -26,16 +26,16 @@ pip install -r requirements.txt
 
 ## Usage
 
-Make sure the Schemaless API Server is running before executing the test script.
+Make sure the FlexStore API Server is running before executing the test script.
 
 ```bash
-python test_schemaless_api.py
+python test_flexstore_api.py
 ```
 
 For verbose output that shows all responses:
 
 ```bash
-python test_schemaless_api.py --verbose
+python test_flexstore_api.py --verbose
 ```
 
 ## What the Script Tests

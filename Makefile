@@ -4,7 +4,7 @@
 .DEFAULT_GOAL := help
 
 # Variables
-APP_NAME := schemaless-api
+APP_NAME := flexstore
 BUILD_DIR := ./build
 COVERAGE_REPORT_DIR := ./coverage
 

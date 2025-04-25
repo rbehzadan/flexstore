@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/rbehzadan/schemaless-api/internal/api/middleware"
+	"github.com/rbehzadan/flexstore/internal/api/middleware"
 )
 
 // testHandler returns a simple handler for testing middleware

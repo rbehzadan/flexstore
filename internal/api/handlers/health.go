@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/rbehzadan/schemaless-api/internal/api"
-	"github.com/rbehzadan/schemaless-api/pkg/config"
+	"github.com/rbehzadan/flexstore/internal/api"
+	"github.com/rbehzadan/flexstore/pkg/config"
 )
 
 // HealthHandler returns a handler function for health checks

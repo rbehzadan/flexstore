@@ -38,7 +38,7 @@ make run
 Or with custom parameters:
 
 ```bash
-./build/schemaless-api -addr :9000
+./build/felxstore -addr :9000
 ```
 
 Available command line options:

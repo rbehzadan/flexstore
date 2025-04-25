@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/rbehzadan/schemaless-api/internal/app"
-	"github.com/rbehzadan/schemaless-api/pkg/config"
+	"github.com/rbehzadan/flexstore/internal/app"
+	"github.com/rbehzadan/flexstore/pkg/config"
 )
 
 // Run starts the server with the provided configuration
@@ -27,6 +27,6 @@ func Run(cfg *config.Config) {
 	}
 
 	// Start server
-	fmt.Printf("Starting Schemaless API Server v%s on %s\n", cfg.Version, cfg.Addr)
+	fmt.Printf("Starting FlexStore API Server v%s on %s\n", cfg.Version, cfg.Addr)
 	log.Fatal(server.ListenAndServe())
 }

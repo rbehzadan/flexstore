@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rbehzadan/schemaless-api/cmd/server"
-	"github.com/rbehzadan/schemaless-api/pkg/config"
+	"github.com/rbehzadan/flexstore/cmd/server"
+	"github.com/rbehzadan/flexstore/pkg/config"
 )
 
 //go:embed VERSION
@@ -37,7 +37,7 @@ func main() {
 
 	// Handle version flag
 	if *showVersion {
-		fmt.Println("Schemaless API Server Version:", version)
+		fmt.Println("FlexStore API Server Version:", version)
 		os.Exit(0)
 	}
 

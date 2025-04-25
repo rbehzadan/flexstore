@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/rbehzadan/schemaless-api/internal/api"
+	"github.com/rbehzadan/flexstore/internal/api"
 )
 
 // BasicAuthMiddleware provides HTTP Basic Authentication

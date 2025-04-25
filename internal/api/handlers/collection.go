@@ -5,8 +5,8 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/rbehzadan/schemaless-api/internal/api"
-	"github.com/rbehzadan/schemaless-api/internal/service"
+	"github.com/rbehzadan/flexstore/internal/api"
+	"github.com/rbehzadan/flexstore/internal/service"
 )
 
 // CollectionHandlers contains handlers for collection operations

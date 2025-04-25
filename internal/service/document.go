@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"io"
 
-	"github.com/rbehzadan/schemaless-api/internal/db"
-	"github.com/rbehzadan/schemaless-api/internal/models"
+	"github.com/rbehzadan/flexstore/internal/db"
+	"github.com/rbehzadan/flexstore/internal/models"
 )
 
 // DocumentService handles document operations

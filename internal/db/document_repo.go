@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/rbehzadan/schemaless-api/internal/models"
+	"github.com/rbehzadan/flexstore/internal/models"
 )
 
 // DocumentRepository handles document operations

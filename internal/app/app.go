@@ -4,11 +4,11 @@ import (
 	"fmt"
 
 	"github.com/gorilla/mux"
-	"github.com/rbehzadan/schemaless-api/internal/api/handlers"
-	"github.com/rbehzadan/schemaless-api/internal/api/middleware"
-	"github.com/rbehzadan/schemaless-api/internal/db"
-	"github.com/rbehzadan/schemaless-api/internal/service"
-	"github.com/rbehzadan/schemaless-api/pkg/config"
+	"github.com/rbehzadan/flexstore/internal/api/handlers"
+	"github.com/rbehzadan/flexstore/internal/api/middleware"
+	"github.com/rbehzadan/flexstore/internal/db"
+	"github.com/rbehzadan/flexstore/internal/service"
+	"github.com/rbehzadan/flexstore/pkg/config"
 )
 
 // App represents the application

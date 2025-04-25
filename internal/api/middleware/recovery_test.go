@@ -6,8 +6,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/rbehzadan/schemaless-api/internal/api"
-	"github.com/rbehzadan/schemaless-api/internal/api/middleware"
+	"github.com/rbehzadan/flexstore/internal/api"
+	"github.com/rbehzadan/flexstore/internal/api/middleware"
 )
 
 // panicHandler returns a handler that panics for testing recovery middleware

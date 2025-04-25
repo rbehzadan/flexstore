@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rbehzadan/schemaless-api/internal/api"
-	"github.com/rbehzadan/schemaless-api/internal/api/handlers"
-	"github.com/rbehzadan/schemaless-api/pkg/config"
+	"github.com/rbehzadan/flexstore/internal/api"
+	"github.com/rbehzadan/flexstore/internal/api/handlers"
+	"github.com/rbehzadan/flexstore/pkg/config"
 )
 
 func TestHealthHandler(t *testing.T) {

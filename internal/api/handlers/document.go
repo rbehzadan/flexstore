@@ -6,9 +6,9 @@ import (
 	"strconv"
 
 	"github.com/gorilla/mux"
-	"github.com/rbehzadan/schemaless-api/internal/api"
-	"github.com/rbehzadan/schemaless-api/internal/models"
-	"github.com/rbehzadan/schemaless-api/internal/service"
+	"github.com/rbehzadan/flexstore/internal/api"
+	"github.com/rbehzadan/flexstore/internal/models"
+	"github.com/rbehzadan/flexstore/internal/service"
 )
 
 // DocumentHandlers contains handlers for document operations

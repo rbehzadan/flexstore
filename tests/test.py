@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Comprehensive test script for the Schemaless API Server.
+Comprehensive test script for the FlexStore API Server.
 This script tests all endpoints, including health check, collection operations,
 document operations, and bulk operations.
 """
@@ -434,7 +434,7 @@ def test_protected_endpoint():
 
 def run_all_tests():
     """Run all tests and report results."""
-    print(colored(f"\nTESTING SCHEMALESS API SERVER AT {BASE_URL}", "white", "on_blue"))
+    print(colored(f"\nTESTING FLEXSTORE API SERVER AT {BASE_URL}", "white", "on_blue"))
     print(f"Test Collection: {COLLECTION_NAME}")
     print("=" * 80)
     
